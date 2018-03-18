@@ -18,6 +18,13 @@ string Node::getName(){
 int Node::getValue(){
     return value;
 }
+
+
+void main(){
+    
+    
+    
+}
     
 
 

@@ -6,12 +6,20 @@ COP3503 Section 1B02
 */
 
 #include <string>;
+#include <cstring>;
 
 class Node{
     
     
     public:
     
+        string getName(){
+            return name;
+        }
+        
+        int getValue(){
+            return value;
+        }
     
 }
 
@@ -20,6 +28,7 @@ class LinkedList{
     
     public:
         
-        get
+        void addNode();
+        
     
 }

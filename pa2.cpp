@@ -10,3 +10,14 @@ COP3503 Section 1B02
 
 
 
+
+string Node::getName(){
+    return name;
+    }
+        
+int Node::getValue(){
+    return value;
+}
+    
+
+

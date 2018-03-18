@@ -10,6 +10,8 @@ COP3503 Section 1B02
 
 class Node{
     
+    friend class LinkedList;
+    
     private:
         int value;
         Node *next, *prev;
@@ -17,24 +19,26 @@ class Node{
     
     public:
     
-        string getName(){
-            return name;
-        }
+        string getName();
         
-        int getValue(){
-            return value;
-        }
+        int getValue();
     
 }
 
 class LinkedList{
+    
+    friend class Node;
     
     private:
         Node *head, *tail, *temp;
     
     public:
         
+        void print();
+        
         void addNode();
+        
+        void clear();
         
     
 }

@@ -10,6 +10,10 @@ COP3503 Section 1B02
 
 class Node{
     
+    private:
+        int value;
+        Node *next, *prev;
+        string name;
     
     public:
     
@@ -25,6 +29,8 @@ class Node{
 
 class LinkedList{
     
+    private:
+        Node *head, *tail, *temp;
     
     public:
         

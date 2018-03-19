@@ -50,9 +50,9 @@ class LinkedList{
     
     public:
     
-        LinkedList();
+        LinkedList(void);
         
-        LinkedList(int value, int b);
+        LinkedList(int value);
         
         ~LinkedList(); //The standard destructor
         

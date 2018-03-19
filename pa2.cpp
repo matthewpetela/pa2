@@ -5,11 +5,10 @@ Matthew Petela
 COP3503 Section 1B02
 */
 
-#include <iostream>
-#include <string>
-#include <cstring>
+#include <iostream> //Used for inputs and outputs
+#include <string> //Used for strings 
 
-#include "pa2.h"
+#include "pa2.h" //Imports the header file
 
 
 
@@ -36,10 +35,11 @@ LinkedList::LinkedList(){
     temp = NULL;
 }
 
-LinkedList::LinkedList(int value, int b){
+LinkedList::LinkedList(int value){
+    const int i = 1;
     tail =  new Node(value);
     head = tail;
-    (*head).value = b;
+    (*head).value = i;
     (*head).name = "FREE";
     
 }
@@ -64,28 +64,35 @@ void LinkedList::print(){
     
 }
 
+void LinkedList::clear(){
+    
+    
+}
+
 int main(int argc, char **argv){
     
-    if (argc == 2){
-        
-        
-        if (argv[argc-1][0] == 'b' || argv[argc-1][0] == 'B'){
-            std::cout<<"Using best fit algorithm\n";
+    if (argc != 2 || argv[argc-1][0] != 'b' && argv[argc-1][0] != 'B' && argv[argc-1][0] != 'w' && argv[argc-1][0] != 'W'){
+            std::cout<<"ERROR: Expecting best fit or worst fit\n";
+            return 0;
         }
         
-        else if (argv[argc-1][0] == 'w' || argv[argc-1][0] == 'W'){
-            std::cout<<"Using worst fit algorithm\n";
-        }
+    const int MAX_PAGE_NUM = 32;
+    
+    LinkedList freeSpaceList(MAX_PAGE_NUM);
+    LinkedList usedSpaceList();
+    
+    int choice;
+    
+    while(std::cin >> choice){
+        std::cout<<"\t1. Add program\n\t2. Kill program\n\t3. Fragmentation\n\t4. Print memory\n\t5. Exit";
         
-        else{
-            std::cout<<"Error";
-        }
         
-    }
-    else{
-        std::cout<<"\nError: Expecting best fit or worst fit argument!\n";
     }
     
+    
+        
+        
+        
     
 }
     

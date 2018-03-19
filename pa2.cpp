@@ -7,6 +7,7 @@ COP3503 Section 1B02
 
 #include <iostream> //Used for inputs and outputs
 #include <string> //Used for strings 
+#include <iomanip>
 
 #include "pa2.h" //Imports the header file
 
@@ -45,7 +46,7 @@ LinkedList::LinkedList(int value){
 }
 
 LinkedList::~LinkedList(){
-    
+    clear();
 }
 
 int LinkedList::worstFit(int size){
@@ -55,6 +56,9 @@ int LinkedList::worstFit(int size){
 
 int LinkedList::bestFit(int size){
     
+    Node *current = head;
+    
+    
     return 1;
 }
 
@@ -63,13 +67,70 @@ void LinkedList::addNode(int location, std::string name, int memSize){
     
 }
 
+bool LinkedList::isRunning(std::string name){
+    
+}
+
 void LinkedList::print(){
     
+    Node *current = head;
+    const char space = ' ';
+    const int spaace = 11;
+    
+    if (head == NULL){
+        
+        for (int i = 1; i <= 31; i++){
+            
+            std::cout<<std::left<<std::setw(spaace)<<"FREE";
+            
+        }
+        
+    }
+    
+    for(int i = 1; i <= 32; i++){
+        if ((*current).value == i){
+            std::cout << std::left << std::setw(spaace) << 
+            std::setfill(space) << current->name;
+			if ((*current).next != NULL) {
+				current = (*current).next;
+			}
+        }
+        else{
+            std::cout<<std::left<<std::setw(spaace)<<std::setfill(space)<<"FREE";
+        }
+
+        
+    }
     
 }
 
 void LinkedList::clear(){
+    Node *current = head;
+    Node *next;
     
+    while (current !=NULL){
+        next = (*current).next;
+        delete current;
+        current = next;
+    }
+    
+}
+
+int kbToLinkedSize(int kbSize){
+    if (kbSize <= 0 || kbSize > 128){
+        std::cout<<"Error: Program size must be between 1kb and 128kb";
+    }
+    
+    else{
+        
+        if (kbSize % 4 == 0){
+            return kbSize/4;
+        }
+        else{
+            return (kbSize + 3)/4;
+        }
+        
+    }
     
 }
 
@@ -91,16 +152,26 @@ int main(int argc, char **argv){
     const int MAX_PAGE_NUM = 32;
     
     LinkedList freeSpaceList(MAX_PAGE_NUM);
-    LinkedList usedSpaceList();
+    LinkedList usedSpaceList;
     
     int choice;
+    int prgSizeKB;
+    int prgSizeIRL;
     
     std::string output = "\t1. Add program\n\t2. Kill program\n\t3. Fragmentation\n\t4. Print memory\n\t5. Exit\n\nchoice - ";
-    std::cout<<output;
-    while(std::cin >> choice){
+    std::string programName;
+    
+
+    while(std::cin){
         std::cout<<output;
+        std::cin>>choice;
         
         if (choice == 1){
+            std::cout<<"Program name - ";
+            std::cin>>programName;
+            std::cout<<"Program size (KB) - ";
+            std::cin>>prgSizeKB;
+            prgSizeIRL = kbToLinkedSize(prgSizeKB);
             
             
         }
@@ -117,7 +188,7 @@ int main(int argc, char **argv){
         
         if (choice == 4){
             
-            
+            usedSpaceList.print();
         }
         
         if (choice == 5){
@@ -131,7 +202,8 @@ int main(int argc, char **argv){
     
         
         
-        
+    usedSpaceList.clear();
+    freeSpaceList.clear();
     
 }
     

@@ -19,6 +19,13 @@ int Node::getValue(){
     return value;
 }
 
+Node* Node::getNext(){
+    return next;
+}
+
+Node* Node::getPre(){
+    return pre;
+}
 
 void main(){
     

@@ -69,6 +69,17 @@ int main(int argc, char **argv){
     if (argc == 2){
         
         
+        if (argv[argc-1][0] == 'b' || argv[argc-1][0] == 'B'){
+            std::cout<<"Using best fit algorithm\n";
+        }
+        
+        else if (argv[argc-1][0] == 'w' || argv[argc-1][0] == 'W'){
+            std::cout<<"Using worst fit algorithm\n";
+        }
+        
+        else{
+            std::cout<<"Error";
+        }
         
     }
     else{

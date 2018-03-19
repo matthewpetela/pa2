@@ -54,6 +54,8 @@ class LinkedList{
         
         LinkedList(int value, int b);
         
+        ~LinkedList(); //The standard destructor
+        
         void print();
         
         void addNode(int location, std::string name, int size);

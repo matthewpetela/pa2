@@ -14,7 +14,7 @@ COP3503 Section 1B02
 
 
 
-string Node::getName(){
+std::string Node::getName(){
     return name;
     }
         
@@ -46,15 +46,15 @@ LinkedList::LinkedList(int value, int b){
 
 int LinkedList::worstFit(int size){
     
-    return 1
+    return 1;
 }
 
 int LinkedList::bestFit(int size){
     
-    return 1
+    return 1;
 }
 
-void LinkedList::addNode(int location, string name, int memSize){
+void LinkedList::addNode(int location, std::string name, int memSize){
     
     
 }

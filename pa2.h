@@ -24,10 +24,10 @@ class Node{
             : next(), pre() {}
             
         Node(int max)
-            : pgMax(max), next(), pre {}
+            : pgMax(max), next(), pre() {}
             
-        Node(int value, string name)
-            :value(value), next(), pre(), name(name) {}
+        Node(int value, std::string name)
+            : value(value), next(), pre(), name(name) {}
         
         std::string getName();
         
@@ -39,7 +39,7 @@ class Node{
         
         
     
-}
+};
 
 class LinkedList{
     
@@ -56,15 +56,15 @@ class LinkedList{
         
         void print();
         
-        void addNode(int location, string name, int location);
+        void addNode(int location, std::string name, int size);
         
         void clear();
         
-        bool isRunning(string name);
+        bool isRunning(std::string name);
         
         int worstFit(int size);
         
         int bestFit(int size);
         
     
-}
+};

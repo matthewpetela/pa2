@@ -5,8 +5,7 @@ Matthew Petela
 COP3503 Section 1B02
 */
 
-#include <string>;
-#include <cstring>;
+
 
 class Node{
     
@@ -16,7 +15,7 @@ class Node{
         
         Node *next, *pre;
         int value;
-        string name;
+        std::string name;
         int pgMax;
     
     public:
@@ -30,7 +29,7 @@ class Node{
         Node(int value, string name)
             :value(value), next(), pre(), name(name) {}
         
-        string getName();
+        std::string getName();
         
         int getValue();
         
@@ -53,15 +52,19 @@ class LinkedList{
     
         LinkedList();
         
-        LinkedList(int value, int )
+        LinkedList(int value, int b);
         
         void print();
         
-        void addNode();
+        void addNode(int location, string name, int location);
         
         void clear();
         
         bool isRunning(string name);
+        
+        int worstFit(int size);
+        
+        int bestFit(int size);
         
     
 }

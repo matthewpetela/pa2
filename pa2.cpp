@@ -5,8 +5,11 @@ Matthew Petela
 COP3503 Section 1B02
 */
 
-#include <iostream>;
-#include <"pa2.h">;
+#include <iostream>
+#include <string>
+#include <cstring>
+
+#include "pa2.h"
 
 
 
@@ -27,8 +30,50 @@ Node* Node::getPre(){
     return pre;
 }
 
-void main(){
+LinkedList::LinkedList(){
+    head = NULL;
+    tail = NULL;
+    temp = NULL;
+}
+
+LinkedList::LinkedList(int value, int b){
+    tail =  new Node(value);
+    head = tail;
+    (*head).value = b;
+    (*head).name = "FREE";
     
+}
+
+int LinkedList::worstFit(int size){
+    
+    return 1
+}
+
+int LinkedList::bestFit(int size){
+    
+    return 1
+}
+
+void LinkedList::addNode(int location, string name, int memSize){
+    
+    
+}
+
+void LinkedList::print(){
+    
+    
+}
+
+int main(int argc, char **argv){
+    
+    if (argc == 2){
+        
+        
+        
+    }
+    else{
+        std::cout<<"\nError: Expecting best fit or worst fit argument!\n";
+    }
     
     
 }
